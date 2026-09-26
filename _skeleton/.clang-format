@@ -1,0 +1,11 @@
+# Matches Gaddis: Allman braces, 3-space indent.
+BasedOnStyle: LLVM
+IndentWidth: 3
+TabWidth: 3
+UseTab: Never
+BreakBeforeBraces: Allman
+ColumnLimit: 80
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None
+IndentCaseLabels: true

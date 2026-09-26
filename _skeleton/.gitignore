@@ -1,0 +1,5 @@
+program
+*.o
+*.out
+a.out
+.cache/
