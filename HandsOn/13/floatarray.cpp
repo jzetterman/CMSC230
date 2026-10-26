@@ -28,46 +28,55 @@ private:
   float values[MAX_LENGTH]; // The array of values
 };
 
-int main()
-
-{
-
+int main() {
   ifstream tempData; // Defines a data file
 
   // Fill in the code to define an object called list of the class FloatList
+  FloatList list;
 
   cout << fixed << showpoint;
-
   cout << setprecision(2);
 
   tempData.open("temperatures.txt");
+  if (!tempData) {
+    cout << "Error loading the file, try again" << endl;
+    return 1;
+  }
 
   // Fill in the code that calls the getList function.
+  list.getList(tempData);
 
   // Fill in the code that calls the printList function.
+  list.printList();
 
   return 0;
 }
 
-FloatList::FloatList()
-
-{
-
+FloatList::FloatList() {
   // Fill in the code to complete this constructor that
-
   // sets the private data member length to 0
+  length = 0;
 }
 
 // Fill in the entire code for the  getList function
-
-// The getList function reads the data values from a data file
-
+// tempDatahe getList function reads the data values from a data fil
 // into the values array of the class FloatList
+void FloatList::getList(ifstream &list) {
+  length = 0;
+
+  while (length < MAX_LENGTH && list >> values[length]) {
+    length++;
+  }
+}
 
 // Fill in the entire code for the  printList function
-
 // The printList function prints to the screen the data in
-
 // the values array of the class FloatList
+void FloatList::printList() const {
+  for (int i = 0; i < length; i++) {
+    cout << values[i] << endl;
+  }
+}
 
 // Fill in the code for the implementation of the destructor
+FloatList::~FloatList() {}
