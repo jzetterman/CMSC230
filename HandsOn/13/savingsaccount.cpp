@@ -14,13 +14,9 @@ public:
   void withdrawal(int, int);
   void balance();
 
-  SavingsAccount(int, int);
-  SavingsAccount();
-  ~SavingsAccount();
-
 private:
-  int dollars;
-  int cents;
+  int dollars = 200;
+  int cents = 50;
 };
 
 void normalize(int &, int &);
@@ -30,12 +26,7 @@ int main() {
   int dollars;
   int cents;
 
-  cout << "Please input the initial dollars: ";
-  cin >> dollars;
-  cout << "Please input the initial cents: ";
-  cin >> cents;
-
-  SavingsAccount bank1(dollars, cents);
+  SavingsAccount bank1;
 
   do {
     cout << "Would you like to make a deposit? Y or y for yes" << endl;
@@ -95,18 +86,3 @@ void SavingsAccount::withdrawal(int d, int c) {
 void SavingsAccount::balance() {
   cout << "Dollars = " << dollars << ", " << "Cents = " << cents << endl;
 }
-
-// Custom constructor
-SavingsAccount::SavingsAccount(int d, int c) {
-  dollars = d;
-  cents = c;
-  normalize(dollars, cents);
-}
-
-// Default constructor
-SavingsAccount::SavingsAccount() {
-  dollars = 0;
-  cents = 0;
-}
-
-SavingsAccount::~SavingsAccount() {}
