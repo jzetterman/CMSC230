@@ -1,0 +1,14 @@
+# Ignore everything, then allow source and data files back in.
+# Compiled programs have no file extension, so a list of names to
+# ignore can't catch them. Add a line here for any new file type.
+*
+!*/
+!*.cpp
+!*.h
+!*.hpp
+!*.txt
+!*.dat
+!*.[0-9]
+!Makefile
+!.gitignore
+!.clang-format
